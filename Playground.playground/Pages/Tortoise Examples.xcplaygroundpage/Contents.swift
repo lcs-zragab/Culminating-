@@ -29,11 +29,11 @@ let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 PlaygroundPage.current.liveView = canvas
 
 /*:
-## Tortoise class
-
-To use the Tortoise abstraction, just create an instance of the Tortoise class, and provide it with a canvas object that is should draw upon.
-*/
-
+ ## Tortoise class
+ 
+ To use the Tortoise abstraction, just create an instance of the Tortoise class, and provide it with a canvas object that is should draw upon.
+ */
+canvas.drawAxes(withScale: true, by: 20, color: .black)
 // Create a turtle that will draw upon the canvas
 let turtle = Tortoise(drawingUpon: canvas)
 
@@ -241,40 +241,71 @@ let turtle = Tortoise(drawingUpon: canvas)
 //}
 
 
-
-
 //where is the turtle
 turtle.currentPosition()
 
 // set the scale
 let scale = 20
 
-    //move turtle
+//// functions
+func drawAroww() {
+
+    
+    //draw a line
+    turtle.currentPosition()
+    turtle.currentHeading()
+    turtle.penDown()
+    turtle.forward(steps: 3 * scale)
+    //draw a turtle
+    //draw upward line
+    turtle.left(by: 90)
+    turtle.forward(steps: 2 * scale)
+    turtle.right(by: 135)
+    turtle.forward(steps: 3 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 3 * scale)
+    turtle.right(by: 135)
+    turtle.forward(steps: 2 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 3 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1)
+    turtle.currentPosition()
+    turtle.forward(steps: 4)
+    turtle.currentPosition()
+    
+    
+    turtle.drawSelf()
+    turtle.currentPosition()
+    turtle.currentHeading()
+    
+    // correct postions and orientation
+    turtle.setHeading(to: 0)
+    turtle.penUp()
+    turtle.left(by: 90)
+    turtle.forward(steps: 1)
+    turtle.right(by: 90)
+    
+    // start drawing
+    turtle.penDown()
+}
+
+
+// get into position
+//move turtle
 turtle.penUp()
 turtle.forward(steps: 5 * 20)
 turtle.left(by: 90)
 turtle.forward(steps: 5 * scale)
 turtle.right(by: 90)
 
-//draw a line
-turtle.currentPosition()
-turtle.penDown()
-turtle.forward(steps: 3 * scale)
-//draw a turtle
-//draw upward line
-turtle.left(by: 90)
-turtle.forward(steps: 2 * scale)
-turtle.right(by: 135)
-turtle.forward(steps: 3 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 3 * scale)
-turtle.right(by: 135)
-turtle.forward(steps: 2 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 3 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1)
-turtle.currentPosition()
-turtle.forward(steps: 4)
-turtle.currentPosition()
+
+for _ in 1...5 {  //draw arrow
+    drawAroww()
+    //get into postion draw next aroww
+    turtle.penUp()
+    turtle.forward(steps: 5 * scale)
+    turtle.penDown()
+}
+
 
