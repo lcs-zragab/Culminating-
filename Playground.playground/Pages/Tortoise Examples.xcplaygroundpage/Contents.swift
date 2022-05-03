@@ -257,40 +257,24 @@ turtle.forward(steps: 5 * scale)
 turtle.right(by: 90)
 
 //draw a line
+turtle.currentPosition()
 turtle.penDown()
 turtle.forward(steps: 3 * scale)
 //draw a turtle
 //draw upward line
 turtle.left(by: 90)
 turtle.forward(steps: 2 * scale)
-turtle.drawSelf()
 turtle.right(by: 135)
 turtle.forward(steps: 3 * scale)
-turtle.drawSelf()
 turtle.right(by: 90)
 turtle.forward(steps: 3 * scale)
-turtle.drawSelf()
 turtle.right(by: 135)
 turtle.forward(steps: 2 * scale)
-turtle.drawSelf()
 turtle.left(by: 90)
 turtle.forward(steps: 3 * scale)
 turtle.right(by: 90)
 turtle.forward(steps: 1)
+turtle.currentPosition()
+turtle.forward(steps: 4)
+turtle.currentPosition()
 
-
-/*:
- ## Show the Assistant Editor
- Don't see any results?
- 
- Remember to show the Assistant Editor (1), and then switch to Live View (2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
