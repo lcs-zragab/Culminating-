@@ -294,9 +294,8 @@ func drawAroww() {
 // get into position
 //move turtle
 turtle.penUp()
-turtle.forward(steps: 5 * 20)
 turtle.left(by: 90)
-turtle.forward(steps: 5 * scale)
+turtle.forward(steps: 3 * scale)
 turtle.right(by: 90)
 
 
@@ -307,5 +306,15 @@ for _ in 1...5 {  //draw arrow
     turtle.forward(steps: 5 * scale)
     turtle.penDown()
 }
+
+
+
+turtle.penUp()
+turtle.right(by: 180)
+turtle.forward(steps: 25 * scale)
+turtle.currentPosition()
+turtle.right(by: 90)
+turtle.forward(steps: 10)
+turtle.drawSelf()
 
 
