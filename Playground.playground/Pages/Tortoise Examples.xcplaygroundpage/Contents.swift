@@ -272,5 +272,9 @@ t.left(by: 90)
 t.forward(steps: 3 * scale)
 t.right(by: 90)
 t.forward(steps: 4 * scale)
+t.left(by: 90)
+t.forward(steps: 2 * scale)
+t.left(by: 90)
+
 
 
