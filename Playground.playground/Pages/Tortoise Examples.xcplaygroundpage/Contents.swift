@@ -35,7 +35,9 @@ PlaygroundPage.current.liveView = canvas
  */
 canvas.drawAxes(withScale: true, by: 20, color: .black)
 // Create a turtle that will draw upon the canvas
-let turtle = Tortoise(drawingUpon: canvas)
+let t = Tortoise(drawingUpon: canvas)
+
+
 
 //// Draw a square
 //turtle.penUp()
@@ -242,79 +244,33 @@ let turtle = Tortoise(drawingUpon: canvas)
 
 
 //where is the turtle
-turtle.currentPosition()
+t.currentPosition()
 
 // set the scale
 let scale = 20
+let diagonal = sqrt(2.0)
 
-//// functions
-func drawAroww() {
-
-    
-    //draw a line
-    turtle.currentPosition()
-    turtle.currentHeading()
-    turtle.penDown()
-    turtle.forward(steps: 3 * scale)
-    //draw a turtle
-    //draw upward line
-    turtle.left(by: 90)
-    turtle.forward(steps: 2 * scale)
-    turtle.right(by: 135)
-    turtle.forward(steps: 3 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 3 * scale)
-    turtle.right(by: 135)
-    turtle.forward(steps: 2 * scale)
-    turtle.left(by: 90)
-    turtle.forward(steps: 3 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1)
-    turtle.currentPosition()
-    turtle.forward(steps: 4)
-    turtle.currentPosition()
-    
-    
-    turtle.drawSelf()
-    turtle.currentPosition()
-    turtle.currentHeading()
-    
-    // correct postions and orientation
-    turtle.setHeading(to: 0)
-    turtle.penUp()
-    turtle.left(by: 90)
-    turtle.forward(steps: 1)
-    turtle.right(by: 90)
-    
-    // start drawing
-    turtle.penDown()
-}
+// get turtle into postions
+t.penUp()
+t.left(by: 90)
+t.forward(steps: 4 * scale)
+t.right(by: 90)
+t.penDown()
 
 
-// get into position
-//move turtle
-turtle.penUp()
-turtle.left(by: 90)
-turtle.forward(steps: 3 * scale)
-turtle.right(by: 90)
-
-
-for _ in 1...5 {  //draw arrow
-    drawAroww()
-    //get into postion draw next aroww
-    turtle.penUp()
-    turtle.forward(steps: 5 * scale)
-    turtle.penDown()
-}
-
-
-
-turtle.penUp()
-turtle.right(by: 180)
-turtle.forward(steps: 25 * scale)
-turtle.currentPosition()
-turtle.right(by: 90)
-turtle.forward(steps: 10)
-turtle.drawSelf()
+// start aroww
+t.forward(steps: 4 * scale)
+t.right(by: 90)
+t.forward(steps: 3 * scale)
+t.left(by: 90)
+t.left(by: 45)
+t.forward(steps: Int(4.0 * diagonal * Double(scale)))
+//t.left(by: 90)
+//t.forward(steps: 4 * Int(diagonal))
+//t.left(by: 45)
+//t.left(by: 90)
+//t.forward(steps: 3 * scale)
+//t.right(by: 90)
+//t.forward(steps: 4 * scale)
 
 
