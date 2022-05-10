@@ -246,6 +246,27 @@ let t = Tortoise(drawingUpon: canvas)
 //where is the turtle
 t.currentPosition()
 
+func drawArrow() {
+    // start aroww
+    t.forward(steps: 4 * scale)
+    t.right(by: 90)
+    t.forward(steps: 3 * scale)
+    t.left(by: 90)
+    t.left(by: 45)
+    t.forward(steps: Int(4.0 * diagonal * Double(scale)))
+    t.left(by: 90)
+    t.forward(steps: Int(4.0 * diagonal * Double(scale)))
+    t.left(by: 45)
+    t.left(by: 90)
+    t.forward(steps: 3 * scale)
+    t.right(by: 90)
+    t.forward(steps: 4 * scale)
+    t.left(by: 90)
+    t.forward(steps: 2 * scale)
+    t.left(by: 90)
+}
+
+
 // set the scale
 let scale = 20
 let diagonal = sqrt(2.0)
@@ -257,24 +278,8 @@ t.forward(steps: 4 * scale)
 t.right(by: 90)
 t.penDown()
 
+drawArrow()
 
-// start aroww
-t.forward(steps: 4 * scale)
-t.right(by: 90)
-t.forward(steps: 3 * scale)
-t.left(by: 90)
-t.left(by: 45)
-t.forward(steps: Int(4.0 * diagonal * Double(scale)))
-t.left(by: 90)
-t.forward(steps: Int(4.0 * diagonal * Double(scale)))
-t.left(by: 45)
-t.left(by: 90)
-t.forward(steps: 3 * scale)
-t.right(by: 90)
-t.forward(steps: 4 * scale)
-t.left(by: 90)
-t.forward(steps: 2 * scale)
-t.left(by: 90)
 
 
 
