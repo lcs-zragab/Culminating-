@@ -280,6 +280,12 @@ t.penDown()
 
 drawArrow()
 
+for _ in 1...5 {
+    t.penUp()
+    t.forward(steps: 8 * scale)
+    t.penDown()
+    drawArrow()
 
+}
 
 
