@@ -280,12 +280,49 @@ t.penDown()
 
 drawArrow()
 
-for _ in 1...5 {
+
+
+
+func fillPageWithArrows() {
+    for _ in 1...3 {
+        t.penUp()
+        t.forward(steps: 8 * scale)
+        t.penDown()
+        drawArrow()
+        t.currentPosition()
+    }
     t.penUp()
+    t.right(by: 180)
+    t.forward(steps: 32 * scale)
+    t.right(by: 90)
     t.forward(steps: 8 * scale)
-    t.penDown()
-    drawArrow()
+    t.currentPosition()
+    t.right(by: 90)
+
+    for _ in 1...4 {
+        t.penUp()
+        t.forward(steps: 8 * scale)
+        t.penDown()
+        drawArrow()
+        t.currentPosition()
+    }
+
+    t.penUp()
+    t.right(by: 180)
+    t.forward(steps: 32 * scale)
+    t.right(by: 90)
+    t.forward(steps: 8 * scale)
+    t.currentPosition()
+    t.right(by: 90)
+
+    for _ in 1...4 {
+        t.penUp()
+        t.forward(steps: 8 * scale)
+        t.penDown()
+        drawArrow()
+        t.currentPosition()
+    }
 
 }
 
-
+fillPageWithArrows()
