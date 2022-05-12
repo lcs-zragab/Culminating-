@@ -36,7 +36,8 @@ PlaygroundPage.current.liveView = canvas
 canvas.drawAxes(withScale: true, by: 20, color: .black)
 // Create a turtle that will draw upon the canvas
 let t = Tortoise(drawingUpon: canvas)
-let scale = 20
+canvas.highPerformance = true
+let scale = 5
 let diagonal = sqrt(2.0)
 
 t.penUp()
@@ -96,7 +97,7 @@ func drawPuzzlePiece(){
 }
 
 func drawRow() {
-    for _ in 1...3 {
+    for _ in 1...12 {
         t.currentPosition()
         t.currentHeading()
         drawPuzzlePiece()
@@ -120,7 +121,7 @@ func getIntoPOstionFirstRow(){
     t.currentHeading()
     t.left(by: 180)
     t.penUp()
-    t.forward(steps: 30 * scale)
+    t.forward(steps: 120 * scale)
     t.right(by: 90)
     t.forward(steps: 5 * scale)
     t.right(by: 90)
@@ -132,7 +133,7 @@ func getIntoPOstionFirstRow(){
 func getIntoPostionsSecondRow(){
     t.penUp()
     t.left(by: 180)
-    t.forward(steps: 35 * scale)
+    t.forward(steps: 125 * scale)
     t.right(by: 90)
     t.forward(steps: 5  * scale)
     t.right(by: 90)
@@ -142,15 +143,14 @@ func getIntoPostionsSecondRow(){
 
 
 func fillPageWithSquares(){
-    drawRow()
-    getIntoPOstionFirstRow()
-    drawRow()
-    getIntoPostionsSecondRow()
-    drawRow()
-    getIntoPOstionFirstRow()
-    drawRow()
-    getIntoPostionsSecondRow()
-    drawRow()
+    for _ in 1...12{
+        drawRow()
+        getIntoPOstionFirstRow()
+        drawRow()
+        getIntoPostionsSecondRow()
+    }
 }
 
 fillPageWithSquares()
+
+canvas.highPerformance = false
