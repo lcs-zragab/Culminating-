@@ -33,7 +33,7 @@ PlaygroundPage.current.liveView = canvas
  
  To use the Tortoise abstraction, just create an instance of the Tortoise class, and provide it with a canvas object that is should draw upon.
  */
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+//canvas.drawAxes(withScale: true, by: 20, color: .black)
 // Create a turtle that will draw upon the canvas
 let t = Tortoise(drawingUpon: canvas)
 canvas.highPerformance = true
@@ -42,9 +42,9 @@ let diagonal = sqrt(2.0)
 
 t.penUp()
 t.currentPosition()
-t.forward(steps: 2 * scale)
+t.forward(steps: 1 * scale)
 t.left(by: 90)
-t.forward(steps: 2 * scale)
+t.forward(steps: 1 * scale)
 t.right(by: 90)
 t.currentPosition()
 
@@ -52,6 +52,7 @@ t.currentPosition()
 
 func drawPuzzlePiece(){
     //satrt square
+    t.setPenColor(to: .blue)
     t.penDown()
     t.forward(steps: 2 * scale)
     t.left(by: 90)
@@ -97,7 +98,7 @@ func drawPuzzlePiece(){
 }
 
 func drawRow() {
-    for _ in 1...12 {
+    for _ in 1...13 {
         t.currentPosition()
         t.currentHeading()
         drawPuzzlePiece()
@@ -121,7 +122,7 @@ func getIntoPOstionFirstRow(){
     t.currentHeading()
     t.left(by: 180)
     t.penUp()
-    t.forward(steps: 120 * scale)
+    t.forward(steps: 130 * scale)
     t.right(by: 90)
     t.forward(steps: 5 * scale)
     t.right(by: 90)
@@ -133,7 +134,7 @@ func getIntoPOstionFirstRow(){
 func getIntoPostionsSecondRow(){
     t.penUp()
     t.left(by: 180)
-    t.forward(steps: 125 * scale)
+    t.forward(steps: 135 * scale)
     t.right(by: 90)
     t.forward(steps: 5  * scale)
     t.right(by: 90)
